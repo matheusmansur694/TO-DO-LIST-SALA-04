@@ -22,3 +22,24 @@ async function initDB() {
         completed INTEGER DEFAULT 0
     )`);
 }
+
+app.get('/tasks', async(requestAnimationFrame, res) => {
+    const tasks = await db.all()
+    res.json(tasks)
+});
+
+app.post('/tasks', async(requestAnimationFrame, res) => {
+    const {description} = req.body;
+    const stmt = await db.prepare (`INSERT INTO tasks (description) VALUES (?)`);
+    await stmt.run(description);
+    await stmt.finalize();
+    res.status(201).json({ message: 'Task added'});
+});
+
+app.delete('/tasks', async(req, res) => {
+        const { id } = req.params;
+        await db.get(`DELETE FROM tasks WHERE id = ?`, id);
+        res.status(204).send();
+})
+
+
