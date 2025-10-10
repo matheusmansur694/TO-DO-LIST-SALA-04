@@ -4,12 +4,12 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-image: url("./images/purple-galaxy-1920-x-1080-background-odgz4qpu11in0s9u.jpg");
     margin: 0;
 }
 
 .container{
-    background-color: white;
+    background-color: purple;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -35,7 +35,7 @@ input{
 button{
     padding: 10px;
     border: none;
-    background: #28a745;
+    background: rgb(205, 0, 205);
     color: white;
     cursor: pointer;
     border-radius: 4px;
@@ -43,7 +43,7 @@ button{
 }
 
 button:hover{
-    background: #1a672b;
+    background: rgb(181, 92, 249);
 }
 
 ul{
@@ -57,6 +57,24 @@ li{
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ccc;
+}
+
+li.completed{
+    text-decoration: line-through;
+    color: #777;
+}
+
+.remove-btn{
+    background: #dc3545;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.remove-btn:hover{
+    background: #941c28;
 }
 
 

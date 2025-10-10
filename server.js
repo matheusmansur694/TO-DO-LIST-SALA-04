@@ -12,7 +12,7 @@ let db;
 
 async function initDB() {
     db = await open({
-        fliname: './banco.db',
+        filename: './banco.db',
         driver: sqlite3.Database,
     });
 
@@ -52,7 +52,7 @@ app.patch('/task/:id/toggle', async(req, res) => {
 
 app.listen(PORT, async() => {
     await initDB();
-    console.log(`Server running at https://localhost:${PORT}`);
+    console.log(`Server running at http://localhost:${PORT}`);
 })
 
 
